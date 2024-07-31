@@ -8,7 +8,7 @@ body {
 }
 a {
    text-decoration: none;
-   color: white;
+   color: black;
 }
 nav a:hover {
    color: black;
@@ -19,30 +19,35 @@ nav a:hover {
 }
 
 header {
-   width: 1140px;
-   max-width: 80%;
-   margin: auto;
+   width: 100%;
+   background-color: white;
+   position: fixed;
+   top: 0;
+   left: 0;
    height: 50px;
    display: flex;
    align-items: center;
-   position: relative;
-   z-index: 100;
+   justify-content: center;
+   z-index: 1000;
+}
+header nav {
+   display: flex;
+   gap: 20px;
 }
 header a {
    margin-right: 40px;  
 }
+.logo {
+   margin: 0 20px;
+}
 .slider {
-   width: 100vm;
+   width: 100vw;
    height: 100vh;
    overflow: hidden;
-   margin-top: -50px;
+   margin-top: 50px; /* Adjust margin to account for fixed header */
 }
 .slider .list .item {
    position: absolute;
-   /* top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0; */
    inset: 0 0 0 0;
 }
 .slider .list .item img {
