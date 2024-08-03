@@ -334,3 +334,39 @@ span.counter-text {
    line-height: 0;
 
 }
+
+@media screen and (max-width: 1024px) {
+   .counter {
+      width: 85vw;
+   }
+
+   .counter-container {
+      height: 18vmin;
+      width: 26vmin;
+      font-size: 12px;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .counter {
+      width: 90vw;
+      flex-wrap: wrap;
+      gap: 30px;
+   }
+   .counter-container {
+      width: calc(50% - 40%);
+      height: 24vmin;
+      font-size: 14px;
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .counter {
+      gap: 15px;
+   }
+   .counter-container {
+      width: 100%;
+      height: 19vmin;
+      font-size: 8px;
+   }
+}
