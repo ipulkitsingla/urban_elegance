@@ -295,3 +295,42 @@ span {
        font-size: 30px;
    }
 }
+.counter {
+   /* border: 1px solid black; */
+   position: absolute;
+   width: 80vw;
+   display: flex;
+   margin-top: 5%;
+   color:#f1683a;
+   gap: 10px;
+   left: 20%;
+}
+.counter-container {
+   width: 28vmin;
+   height: 20vmin;
+   /* border: 1px solid #412E27; */
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   padding: 1em 0;
+   position: relative;
+   font-size: 16px;
+   background-color: #60453b;
+   border-bottom: 10px solid #f1683a;
+}
+span.num {
+   color: #f1683a;
+   display: grid;
+   place-items: center;
+   font-weight: 600;
+   font-size: 3em;
+}
+span.counter-text {
+   color: white;
+   font-size: 1em;
+   text-align: center;
+   pad: 0.7em 0;
+   font-weight: 400;
+   line-height: 0;
+
+}
