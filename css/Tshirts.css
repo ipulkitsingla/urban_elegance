@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+body {
+   font-family: Poppins;
+   background-color: white;
+   color: white;
+   margin: 0;
+   font-size: 14px;
+}
+a {
+   text-decoration: none;
+   color: black;
+}
+nav a:hover {
+   color: black;
+   font-size: 16px;
+   font-weight: 500;
+   text-decoration: underline;
+   transition: color 0.3s ease, font-size 0.3s ease, font-weight 0.3s ease, text-decoration 0.3s ease;
+}
+
+header {
+   width: 100%;
+   background-color: white;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 1000;
+}
+header nav {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+header a {
+   margin: 0 10px;  
+}
+.logo {
+   margin: 0 20px;
+}
+hr {
+   margin-top: 5.2%
+}
+.back {
+   margin-top: 1%;
+   margin-left: 5%;
+   color: #5A5A5A;
+   font-family: "Jost", sans-serif;
+}
+.back span {
+   color: #B0B0B0;
+}
+.back span:hover {
+   color: #5A5A5A;
+   transition: color 0.3s ease;
+}
+.heading {
+   margin-top: 3%;
+   font-family: "Jost", sans-serif;
+   color: black;
+   font-size: 56px;
+   line-height: 60px;
+   font-weight: 500;
+   text-align: center;
+   justify-content: center;
+}
+.product-list {
+   display: grid;
+   border: 2px solid black;
+   width: 80%;
+   margin-left: 10%;
+   /* height: 100vmin; */
+   height: auto;
+}
