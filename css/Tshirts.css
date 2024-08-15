@@ -41,6 +41,8 @@ header nav {
    display: flex;
    align-items: center;
    gap: 20px;
+   border-bottom: 2px solid black;
+   padding-bottom: 10px; 
 }
 header a {
    margin: 0 10px;  
@@ -49,7 +51,7 @@ header a {
    margin: 0 20px;
 }
 hr {
-   margin-top: 5.2%
+   margin-top: 5.2%;
 }
 .back {
    margin-top: 1%;
@@ -75,10 +77,93 @@ hr {
    justify-content: center;
 }
 .product-list {
+   margin-top: 3%;
    display: grid;
-   border: 2px solid black;
-   width: 80%;
-   margin-left: 10%;
-   /* height: 100vmin; */
+   grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+   gap: 2rem;
+   width: 95%;
+   margin-left: 2.5%;
+}
+.row-img{
+   position: relative;
+   transition: all 0.40s ease-in-out;
+}
+.t1, .t2, .t3, .t4, .t5, .t6, .t7, .t8 {
+   width: 100%;
    height: auto;
+   opacity: 1;
+   transition: opacity 1s ease-in-out;
+}
+.product-details {
+   display: flex;
+   justify-content: space-between;
+}
+.heart-icon {
+   right: 0;
+   font-size: 20px;
+   color: red;
+   margin-top: 2%;
+}
+.heart-icon:hover {
+   cursor: pointer;
+}
+.ratings {
+   margin-top: 2%;
+   color: #fc8c00;
+   font-size: 20px;
+}
+.price {
+   color: black;
+}
+.price h4 {
+   font-weight: 400;
+}
+.price p {
+   font-size: 1.4em;
+   font-weight: 600;
+}
+.row-img:hover .t1, .row-img:hover .t2, .row-img:hover .t3, .row-img:hover .t4, .row-img:hover .t5, .row-img:hover .t6, .row-img:hover .t7, .row-img:hover .t8{
+   opacity: 0;
+}
+.row-img::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-position: center;
+   transition: opacity 1s ease-in-out;
+   opacity: 0;
+}
+.row-img:hover::before {
+   opacity: 1;
+}
+
+.row:nth-child(1) .row-img::before {
+   background-image: url('/images/Tshirt/01/02.webp');
+}
+.row:nth-child(2) .row-img::before {
+   background-image: url('/images/Tshirt/02/02.webp');
+}
+
+.row:nth-child(3) .row-img::before {
+   background-image: url('/images/Tshirt/03/02.webp');
+}
+
+.row:nth-child(4) .row-img::before {
+   background-image: url('/images/Tshirt/04/02.webp');
+}
+.row:nth-child(5) .row-img::before {
+   background-image: url('/images/Tshirt/05/02.webp');
+}
+.row:nth-child(6) .row-img::before {
+   background-image: url('/images/Tshirt/06/02.webp');
+}
+.row:nth-child(7) .row-img::before {
+   background-image: url('/images/Tshirt/07/02.webp');
+}
+.row:nth-child(8) .row-img::before {
+   background-image: url('/images/Tshirt/08/02.webp');
 }
