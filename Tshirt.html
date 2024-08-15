@@ -21,6 +21,10 @@
       <a href="#">Contact Us</a>
    </nav>
 </header><hr>
+<div id="wishlist" class="wishlist">
+   <img src="/images/check.png" alt="">
+   <p>Product Added To Wishlist</p>
+</div>
 <div class="back">
    <a href="index.html">
       <span>Home </span>
@@ -48,6 +52,10 @@
       <div class="price">
          <h4>Heavy Weight Free Spirit Oversized T-shirt</h4>
          <p>₹ 1,299.00</p>
+         <div class="old-price">
+            <span class="original">₹ 1,999.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
    <div class="row">
@@ -68,6 +76,10 @@
       <div class="price">
          <h4>Guardian Wings Relaxed Fit T-shirt - Ultra Soft</h4>
          <p>₹ 1,099.00</p>
+         <div class="old-price">
+            <span class="original">₹ 1,699.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
    <div class="row">
@@ -88,6 +100,10 @@
       <div class="price">
          <h4>Glory Arc Oversized Fit T-shirt - Ultra Soft</h4>
          <p>₹ 1,299.00</p>
+         <div class="old-price">
+            <span class="original">₹ 1,999.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
    <div class="row">
@@ -108,6 +124,10 @@
       <div class="price">
          <h4>Glory Arc Oversized Fit T-shirt - Ultra Soft</h4>
          <p>₹ 1,299.00</p>
+         <div class="old-price">
+            <span class="original">₹ 1,999.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
    <div class="row">
@@ -128,6 +148,10 @@
       <div class="price">
          <h4>Grey Warrior - The Warrior Arc Oversized T-shirt - Ultra Soft</h4>
          <p>₹ 1,099.00</p>
+         <div class="old-price">
+            <span class="original">₹ 1,699.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
    <div class="row">
@@ -148,6 +172,10 @@
       <div class="price">
          <h4>Textured Champion Arc Oversized Fit T-shirt</h4>
          <p>₹ 1,499.00</p>
+         <div class="old-price">
+            <span class="original">₹ 2,299.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
    <div class="row">
@@ -168,6 +196,10 @@
       <div class="price">
          <h4>Textured Heavy Weight OVRLS Relaxed fit T-shirt</h4>
          <p>₹ 1,299.00</p>
+         <div class="old-price">
+            <span class="original">₹ 1,999.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
    <div class="row">
@@ -188,11 +220,22 @@
       <div class="price">
          <h4>The Beast Relaxed Fit Ultra Soft T-shirt</h4>
          <p>₹ 1,299.00</p>
+         <div class="old-price">
+            <span class="original">₹ 1,999.00</span> 
+            <span class="discount">(35% OFF)</span>
+         </div>
       </div>
    </div>
 </div>
+<div class="text-with-icon">
+   <div class="delivery"><i class="ph-fill ph-truck"></i></div>
+   <div class="return"><i class="ph-fill ph-repeat"></i></div>
+   <div class="contact-us"><i class="ph-fill ph-envelope-simple"></i></div>
+</div>
 </body>
 <script>
+   var div = document.getElementById('wishlist');
+   var display = 0;
    function toggleHeart(element) {
       const icon = element.querySelector('i');
       if (icon.classList.contains('ph-heart-straight') && !icon.classList.contains('ph-fill')) {
@@ -201,6 +244,11 @@
       } else {
          icon.classList.remove('ph-fill');
       }
+      var dialog = document.getElementById('wishlist');
+        dialog.classList.add('show');
+        setTimeout(function() {
+            dialog.classList.remove('show');
+        }, 2500);
    }
 </script>
 

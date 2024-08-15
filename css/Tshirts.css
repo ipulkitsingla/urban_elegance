@@ -53,6 +53,41 @@ header a {
 hr {
    margin-top: 5.2%;
 }
+.wishlist {
+   border: 2px solid red;
+   background-color: white;
+   width: 20%;
+   height: 15vmin;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   padding: 10px;
+   box-sizing: border-box;
+   position: fixed;
+   margin-left: 77%;
+   z-index: 2;
+   opacity: 0; 
+   visibility: hidden;
+   transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+.wishlist.show {
+   opacity: 1;
+   visibility: visible;
+}
+
+.wishlist img {
+   margin-bottom: 10px;
+   width: 60px;
+   height: 50px;
+}
+
+.wishlist p {
+   margin: 0;
+   font-size: 1.2em;
+   color: black;
+}
 .back {
    margin-top: 1%;
    margin-left: 5%;
@@ -117,10 +152,22 @@ hr {
 }
 .price h4 {
    font-weight: 400;
+   font-size: 1.1em ;
 }
+.old-price .original{
+   font-size: 0.9em;
+   text-decoration: line-through;
+}
+
 .price p {
    font-size: 1.4em;
    font-weight: 600;
+   margin: 1%;
+}
+.old-price .discount {
+   color: #fc8c00;
+   text-decoration: none !important;
+   font-weight: bold !important;
 }
 .row-img:hover .t1, .row-img:hover .t2, .row-img:hover .t3, .row-img:hover .t4, .row-img:hover .t5, .row-img:hover .t6, .row-img:hover .t7, .row-img:hover .t8{
    opacity: 0;
@@ -166,4 +213,13 @@ hr {
 }
 .row:nth-child(8) .row-img::before {
    background-image: url('/images/Tshirt/08/02.webp');
+}
+.text-with-icon {
+   display: flex;
+   width: 60%;
+   margin-left: 20%;
+   justify-content: space-between;
+   color: black;
+   font-size: 50px;
+   margin-top: 5%;
 }
