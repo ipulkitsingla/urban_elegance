@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+body {
+   font-family: Poppins;
+   background-color: white;
+   color: white;
+   margin: 0;
+   font-size: 14px;
+}
+a {
+   text-decoration: none;
+   color: black;
+}
+nav a:hover {
+   color: black;
+   font-size: 16px;
+   font-weight: 500;
+   text-decoration: underline;
+   transition: color 0.3s ease, font-size 0.3s ease, font-weight 0.3s ease, text-decoration 0.3s ease;
+}
+
+header {
+   width: 100%;
+   background-color: white;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 80px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 1000;
+}
+header nav {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   border-bottom: 2px solid black;
+   padding-bottom: 10px; 
+}
+header a {
+   margin: 0 10px;  
+}
+.logo {
+   margin: 0 20px;
+}
+hr {
+   margin-top: 5.2%;
+}
+.back {
+   margin-top: 1%;
+   margin-left: 5%;
+   color: #5A5A5A;
+   font-family: "Jost", sans-serif;
+}
+.back span {
+   color: #B0B0B0;
+}
+.back span:hover {
+   color: #5A5A5A;
+   transition: color 0.3s ease;
+}
+.product-image {
+   display: flex;
+}
+.thumb-img img{
+   width: 9.2vmin;
+   padding: .7vmin;
+}
+.small-img {
+   display: flex;
+   flex-direction: column;
+   margin-left: 10%;
+   margin-top: 4%;
+   cursor: pointer;
+}
+.big-img {
+   margin-left: 3%;
+   margin-top: 4%;
+}
+.big-img img {
+   max-width: 80vmin;
+}
+.product-info {
+   color: black;
+   margin-top: 4%;
+   font-family: "Jost", sans-serif;
+   margin-left: 5%;
+}
+.urban-head {
+   font-size: 1em;
+   font-family: Arial, Helvetica, sans-serif;
+   font-weight: bold;
+}
+.product-head {
+   margin-top: 10%;
+   font-size: 2.5em;
+   line-height: 1;
+   margin-right: 20%;
+}
+.product-price {
+   margin-top: 4%;
+}
+.product-price .new_price {
+   font-size: 1.5em;
+   margin-top: 7%;
+}
+.product-price .ori_price {
+   color: #FC8C00;
+   text-decoration: line-through;
+   margin-left: 1%;
+}
+.product-delivery {
+   margin-top: 2%;
+   font-size: 1.2em;
+}
+.product-delivery .truck_icon {
+   font-size: 1.4em;
+   margin-right: 1%;
+   font-weight: bold;
+}
+.product-delivery .pincode {
+   border-radius: 10px;
+   padding: 0px 6px;
+}
+.pincode_chk_btn {
+   padding: 0px 6px;
+   outline: none;
+   border-radius: 10px;
+   color: red;
+   background-color: white;
+   border: 1px solid black;
+}
+.product-size {
+   margin-top: 4%;
+}
+.product-size .sizes {
+   margin-top: 4%;
+}
+.product-size .size_box {
+   border: 1px solid #DDDDDD;
+   padding: 11px 18px 13px;
+   margin-right: 1%;
+   cursor: pointer;
+   border-radius: 5px;
+}
+.product-size .size_box:hover {
+   background-color: #E5E5E5;
+   border: 2px solid black;
+}
+.addtocart {
+   margin-top: 10%;
+   width: 70%;
+   text-align: center;
+   padding: 13px 18px 13px;
+   height: 50px;
+   cursor: pointer;
+   background-color: #E5E5E5;
+}
+.addtocart:hover {
+   background-color: #d0d0d0;
+}
+.review-heading {
+   margin-top: 4%;
+   color: black;
+   text-align: center;
+   font-size: 1.5em;
+   font-weight: bolder;
+   font-family: "Jost", sans-serif;
+}
+.review {
+   margin-left: 5%;
+   margin-top: 2%;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: flex-start;
+}
+
+.current i {
+   color: #FC8C00;
+}
+
+.current .star-word, .current .word {
+   color: black;
+   font-family: "Jost", sans-serif;
+}
+
+.current .word {
+   margin-top: -8px;
+   font-size: 1.1em;
+}
+
+.total {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   margin-top: 10px;
+}
+
+.rating-row {
+   display: flex;
+   align-items: center;
+   margin-bottom: 5px;
+}
+.star-5, .star-4, .star-3, .star-2, .star-1{
+   display: flex;
+   justify-content: center;
+   text-align: center;
+}
+.total .rating-star i {
+   color: #FC8C00;
+}
+
+.total .rating-bar {
+    background-color: #EFEFEF;
+    width: 20vmin;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 1.8%;
+}
+.star-5 .rating-bar, .star-4 .rating-bar {
+   background-color: #FC8C00;
+}
+
+.total .rating-num {
+   color: black;
+   margin-left: 5px;
+   font-family: "Jost", sans-serif;
+}
+.write {
+   background-color: #FFA500;
+   color: white;
+   height: 4.6vmin;
+   padding: 0.5em 4em;
+   font-size: 1em;
+   font-weight: bold;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+   font-family: "Jost", sans-serif;
+   margin-top: 20px;
+}
+
+.write:hover {
+   background-color: #FF8C00;
+}
