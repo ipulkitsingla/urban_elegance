@@ -80,6 +80,9 @@ hr {
    margin-top: 4%;
    cursor: pointer;
 }
+.thumb-img:hover {
+   border-bottom: 2px solid black;
+}
 .big-img {
    margin-left: 3%;
    margin-top: 4%;
