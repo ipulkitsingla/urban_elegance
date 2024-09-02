@@ -223,6 +223,10 @@ span {
        width: 0;
        opacity: 0;
    }
+   to{
+      width: 150px;
+      opacity: 1;
+  }
 }
 .slider.next .thumbnail{
    animation: effectNext .5s linear 1 forwards;
