@@ -10,17 +10,22 @@ z<!DOCTYPE html>
    <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
-<header>
-   <nav>
-      <a href="#">Home</a>
-      <a href="#">New Arrivals</a>
-      <a href="#">Shop Men</a>
-      <div class="logo"><a href="#"><img src="/images/logo.svg" alt="logo" width="120px"></a></div>
-      <a href="#">Sale</a>
-      <a href="#">Women</a>
-      <a href="#">Contact Us</a>
-   </nav>
-</header><hr>
+   <header>
+      <nav>
+         <div class="logo"><a href="#"><img src="images/logo.svg" alt="logo" width="120px"></a></div>
+         <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">Shop Men</a>
+            <a href="#">Sale</a>
+            <a href="#">Women</a>
+            <a href="#">Contact Us</a>
+         </div>
+         <div class="burger">
+            <i class="ph ph-list"></i>
+         </div>
+      </nav>
+   </header><hr>
 <div class="back">
    <a href="/index.html">
       <span>Home </span>
@@ -199,5 +204,12 @@ z<!DOCTYPE html>
          mainimg.src = smallimg[i].src;
       }
    }
+   const burger = document.querySelector('.burger');
+   const navLinks = document.querySelector('.nav-links');
+
+   burger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+   });
+
 </script>
 </html>

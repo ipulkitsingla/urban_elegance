@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Responsive Nav Bar</title>
+   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+   <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+<div class="header">
+<div class="nav">
+   <div class="search-container">
+      <i class="ph ph-magnifying-glass search-icon" onclick="toggleSearch()"></i>
+      <input type="search" placeholder="Looking For Joggers" class="search-bar">
+   </div>
+   <div class="logo-container">
+      <img src="/images/logo.svg" alt="Logo" class="logo" width="110px">
+   </div>
+   <div class="head-icon">
+      <i class="ph-fill ph-envelope"></i>
+      <i class="ph-fill ph-user"></i>
+      <i class="ph-fill ph-shopping-bag"></i>
+   </div>
+   <div class="burger" onclick="toggleMenu()">
+      <i class="ph ph-list"></i>
+   </div>
+</div>
+<div class="nav-cat">
+   <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#">Shop Men</a>
+         <ul>
+            <li><a href="#">Tshirts</a></li>
+            <li><a href="#">Polo</a></li>
+            <li><a href="#">Shirts</a></li>
+            <li><a href="#">Jacket</a></li>
+            <li><a href="#">Oversized</a></li>
+            <li><a href="#">Full Sleeves</a></li>
+            <li><a href="#">Sweatshirt</a></li>
+            <li><a href="#">Bottom</a></li>
+            <li><a href="#">Hoodies</a></li>
+         </ul>
+      </li>
+      <li><a href="#">Shop Women</a></li>
+      <li><a href="#">Winter Arrivals</a></li>
+      <li><a href="#">Sale</a></li>
+      <li><a href="#">Contact Us</a>
+         <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+         </ul>
+      </li>
+   </ul>
+</div>
+</div>
+
+<script>
+   function toggleSearch() {
+      const searchContainer = document.querySelector('.search-container');
+      searchContainer.classList.toggle('show-search');
+   }
+
+   function toggleMenu() {
+      const navCat = document.querySelector('.nav-cat ul');
+      navCat.classList.toggle('show-menu');
+   }
+   const searchIcon = document.querySelector('.search-icon');
+   const searchBar = document.querySelector('.search-bar');
+   searchIcon.addEventListener('click', () => {
+      searchBar.classList.toggle('show-search');
+});
+</script>
+</body>
+</html>

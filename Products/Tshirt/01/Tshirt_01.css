@@ -40,9 +40,38 @@ header {
 header nav {
    display: flex;
    align-items: center;
+   justify-content: space-between;
+   padding: 0 20px;
+}
+.nav-links {
+   display: flex;
    gap: 20px;
-   border-bottom: 2px solid black;
-   padding-bottom: 10px; 
+}
+.burger {
+   color: black;
+   display: none;
+   cursor: pointer;
+   font-size: 24px;
+}
+@media screen and (max-width: 768px) {
+   .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: white;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+   }
+
+   .nav-links.active {
+      display: flex;
+   }
+
+   .burger {
+      display: block;
+   }
 }
 header a {
    margin: 0 10px;  
