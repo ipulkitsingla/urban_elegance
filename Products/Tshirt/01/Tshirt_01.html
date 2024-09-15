@@ -24,6 +24,11 @@
          <div class="burger">
             <i class="ph ph-list"></i>
          </div>
+         <div class="header-icon"></div>
+            <a href="login.html"><i class="ph-fill ph-user"></i></a>
+            <a href="#footer"><i class="ph-fill ph-envelope-simple"></i></a>
+            <a href="/cart.html"><i class="ph-fill ph-shopping-cart"></i></a>
+         </div>
       </nav>
    </header><hr>
 <div class="back">
@@ -74,9 +79,11 @@
             <span class="size_box">XXL</span>
          </div>
       </div>
-      <div class="addtocart">
+      <div class="add_to_cart">
          ADD TO CART
+         <button class="addtocart" onclick="addtocart('Heavy Weight Free Spirit Oversized T-shirt', 1299, 1999, './images/Tshirt/01/01.webp')">Add To Cart</button>
       </div>
+      <a href="/cart.html">Go To Cart</a>
    </div>
 </div>
 <div class="review-heading">
@@ -213,6 +220,6 @@
    burger.addEventListener('click', () => {
       navLinks.classList.toggle('active');
    });
-
 </script>
+<script src="/js/cart.js"></script>
 </html>
