@@ -66,7 +66,11 @@ function displayCart() {
       totalDiscount.textContent = '- ₹' + discout;
       totalitembag.textContent = cart.length + ' items';
       totalcheckout.textContent = cart.length;
+      
+      localStorage.setItem('totalpayment', Price);
    });
+
+   
 }
 
 function removeFromCart(name) {
