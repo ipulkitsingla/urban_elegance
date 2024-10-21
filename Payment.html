@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>ECOMMERCE WEBSITE DOWNLOAD</title>
+    <title>Payment Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
@@ -107,23 +108,42 @@
     </style>
     <script type="text/javascript">
 
-        $(document).ready(function() {
-         let amount = localStorage.getItem('totalpayment');
-            $(".generate_qr").click(function() {
+        $(document).ready(function () {
+            let amount = localStorage.getItem('totalpayment');
+            let timer;
+            let countdownTime = 150; // 150 seconds
+            let interval;
+            $(".generate_qr").click(function () {
                 $(".form").hide();
                 $(".qr_code").show();
+
+                $(".timer").text("Time remaining: " + countdownTime + " seconds");
+
+                interval = setInterval(function () {
+                    countdownTime--;
+                    $(".timer").text("Time remaining: " + countdownTime + " seconds");
+
+                    if (countdownTime <= 0) {
+                        clearInterval(interval);
+                        alert("Time out! Redirecting to cart page.");
+                        window.location.href = "cart.html";
+                    }
+                }, 1000);
+
                 var num = $(".number").val();
                 var link = "upi://pay?pa=pulkitsingla4215@okhdfcbank%26am=" + amount + "&tn=" + num;
                 var upi = "https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=" + link;
                 console.log(upi);
                 $(".get_qr").attr("src", upi);
             });
-            $(".download_now").click(function() {
+            $(".download_now").click(function () {
                 var name = $(".name").val();
                 var num = $(".number").val();
                 var email = $(".email").val();
                 var id = $(".id").val();
                 if (num != "" && name != "" && email != "" && id != "") {
+                    clearTimeout(timer);
+                    clearInterval(interval);
                     /*$.post("back.php",{name:name,num:num,email:email,id:id},function(res) {
                      if(res==1){
 
@@ -146,15 +166,16 @@
         <div class="form">
             <div class="flex m20">
                 <label>Contact Details</label>
-                <input type="text" name="name" placeholder="Full Name*" class="m10 name">
-                <input type="text" name="phone" placeholder="Mobile No*" class="m10 number">
+                <input type="text" name="name" placeholder="Full Name*" class="m10 name" required>
+                <input type="text" name="phone" placeholder="Mobile No*" class="m10 number" required>
             </div>
             <div class="flex m20">
                 <label>Address</label>
-                <input type="number" name="pincode" placeholder="Pin Code*" class="m10 pincode">
-                <input type="text" name="address" placeholder="Address (House No, Building, Street, Area)*" class="m10 address">
-                
-                <input type="text" name="address" placeholder="Locality / Town*" class="m10 locality">
+                <input type="number" name="pincode" placeholder="Pin Code*" class="m10 pincode" required>
+                <input type="text" name="address" placeholder="Address (House No, Building, Street, Area)*"
+                    class="m10 address" required>
+
+                <input type="text" name="address" placeholder="Locality / Town*" class="m10 locality" required>
 
             </div>
             <div class="flex m20">
@@ -163,7 +184,8 @@
             </div>
         </div>
         <div class="qr_code m20">
-            <p>Scan the QR Code with any UPI App and pay the amount then download the source code.</p>
+            <p>Scan the QR Code with any UPI App and pay the amount then download Invoice.</p>
+            <center><div class="timer"></div></center>
             <center><img src="" alt="QR CODE" class="get_qr m10"></center>
             <center><img src="images/payicon.jpg" class="im m10"></center>
             <div class="flex m20">
