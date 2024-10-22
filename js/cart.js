@@ -47,13 +47,13 @@ function displayCart() {
          <td>₹${item.originalPrice}</td>
          <td>₹${item.price}</td>
          <td>
-          <button onclick="changeQuantity('${item.name}', 'increase')">+</button>
+          <button id="bfun" onclick="changeQuantity('${item.name}', 'increase')">+</button>
           ${item.quantity}
-          <button onclick="changeQuantity('${item.name}', 'decrease')">-</button>
+          <button id="bfun" onclick="changeQuantity('${item.name}', 'decrease')">-</button>
         </td>
         <td>₹${item.price * item.quantity}</td>
         <td>
-          <button onclick="removeFromCart('${item.name}')">Remove</button>
+          <button id="bfun" onclick="removeFromCart('${item.name}')">Remove</button>
         </td>
       `;
       cartContainer.appendChild(itemDiv);

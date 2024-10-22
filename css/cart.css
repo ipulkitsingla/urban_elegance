@@ -166,7 +166,10 @@ img {
 .price-row:last-child {
     border-bottom: none;
 }
-
+#bfun {
+   padding: 5px;
+   margin-left: 4px;
+}
 .discount, #discount {
     color: #d9534f;
 }
