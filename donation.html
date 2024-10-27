@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Elegance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png"> <!-- Update the path to your logo -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/donation.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <a href="/" class="logo">Urban Elegance</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="login.html">Login</a>
+                <button class="donate-btn">Donate</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="background-section">
+        <img src="images/donation_img1.jpg" alt="Donation Background">
+        <div class="text-overlay">
+            <h1>Make a Difference</h1>
+            <p>Donate to help children in need.</p>
+        </div>
+    </div>
+
+    <div class="heading1">
+        <h1>Your Donation Will Provide...</h1>
+    </div>
+
+    <div class="boxes-section">
+        <div class="grid-row row-1">
+            <div class="box">
+                <h1>&#8377;200</h1>
+                <p>Could purchase a winter coat for one scholar</p>
+            </div>
+            <div class="box">
+                <h1>&#8377;500</h1>
+                <p>Could buy a set of school supplies for an entire year</p>
+            </div>
+            <div class="box">
+                <h1>&#8377;1000</h1>
+                <p>Would support the cost of academic celebrations, field lessons, and awards</p>
+            </div>
+        </div>
+
+        <div class="grid-row row-2">
+            <div class="box">
+                <h1>&#8377;2000</h1>
+                <p>Would make it possible to purchase additional Chromebooks and iPads to enhance scholar learning</p>
+            </div>
+            <div class="box">
+                <h1>&#8377;5000</h1>
+                <p>Could cover the cost of an Extended Learning Opportunity for one scholar for an entire year</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="heading2">
+        <h1>Select an Amount</h1>
+    </div>
+
+    <div class="radio-buttons-section">
+        <form id="donation-form">
+            <label>
+                <input type="radio" name="donation-amount" value="200" onclick="toggleCustomInput(false)">
+                ₹200
+            </label>
+            <label>
+                <input type="radio" name="donation-amount" value="500" onclick="toggleCustomInput(false)">
+                ₹500
+            </label>
+            <label>
+                <input type="radio" name="donation-amount" value="1000" onclick="toggleCustomInput(false)">
+                ₹1000
+            </label>
+            <label>
+                <input type="radio" name="donation-amount" value="2000" onclick="toggleCustomInput(false)">
+                ₹2000
+            </label>
+            <label>
+                <input type="radio" name="donation-amount" value="5000" onclick="toggleCustomInput(false)">
+                ₹5000
+            </label>
+            <label>
+                <input type="radio" name="donation-amount" value="other" onclick="toggleCustomInput(true)">
+                OTHER
+            </label>
+            <input type="number" id="custom-amount" placeholder="Enter custom amount" style="display: none;" min="1">
+        </form>
+    </div>
+
+    <div class="para">
+        <label>
+            Add 3% to cover the transaction fee:
+            <input type="checkbox" name="donation-para">
+        </label>
+    </div>
+
+    <div class="payment-section">
+        <h2>Choose Your Payment Method</h2>
+        <button id="pay-now" onclick="processPayment()">Pay Now</button>
+        <div class="payment-options">
+            <img src="images/credit_card.png" alt="Credit Card" title="Credit Card">
+            <img src="images/bhim_upi.png" alt="BHIM UPI" title="BHIM UPI">
+            <img src="images/google_pay.png" alt="Google Pay" title="Google Pay">
+            <img src="images/apple_pay.png" alt="Apple Pay" title="Apple Pay">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-column">
+                <h4>ABOUT US</h4>
+                <p>Urban Clothing Pvt Ltd</p>
+                <p>Explore to CHANGE.</p>
+                <a href="#">Learn More</a>
+            </div>
+            <div class="footer-column">
+                <h4>POLICIES</h4>
+                <a href="#">Return Your Order</a>
+                <a href="#">Shipping Policy</a>
+                <a href="#">Return, Refund, and Cancellation</a>
+                <a href="#">Terms and Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Fraud Protection</a>
+            </div>
+            <div class="footer-column">
+                <h4>NEWSLETTER</h4>
+                <p>You can be the first one to know about our new releases, latest offers and more. <a href="SignUp.html">Sign up now!</a></p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Your E-mail">
+                    <button type="submit">➔</button>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>FOLLOW US</h4>
+                <p>Stay in touch!</p>
+                <div class="social-icons">
+                    <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                    <a href="#"><i class="ph-fill ph-youtube-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let selectedAmount = 0;
+
+        function toggleCustomInput(isCustom) {
+            const customAmountInput = document.getElementById("custom-amount");
+            
+            if (isCustom) {
+                customAmountInput.style.display = "block";
+                customAmountInput.required = true;
+                selectedAmount = parseInt(customAmountInput.value) || 0;
+            } else {
+                customAmountInput.style.display = "none";
+                customAmountInput.required = false;
+                customAmountInput.value = "";
+                selectedAmount = parseInt(document.querySelector('input[name="donation-amount"]:checked').value);
+            }
+        }
+
+        document.getElementById("custom-amount").addEventListener("input", function() {
+            selectedAmount = parseInt(this.value) || 0;
+        });
+
+        document.getElementById("donation-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            console.log("Selected Donation Amount:", selectedAmount);
+        });
+    </script>
+</body>
+</html>

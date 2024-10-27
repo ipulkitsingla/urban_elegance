@@ -111,9 +111,30 @@
         $(document).ready(function () {
             let amount = localStorage.getItem('totalpayment');
             let timer;
-            let countdownTime = 110; // 150 seconds
+            let countdownTime = 110;
             let interval;
             $(".generate_qr").click(function () {
+                let name = $(".name").val().trim();
+                let phone = $(".number").val().trim();
+                let pincode = $(".pincode").val().trim();
+                let address = $(".address").val().trim();
+                let locality = $(".locality").val().trim();
+
+                if (name === "" || phone === "" || pincode === "" || address === "" || locality === "") {
+                    alert("Please fill all the required fields correctly.");
+                    return;
+                }
+
+                const userDetails = {
+                    name: name,
+                    phone: phone,
+                    pincode: pincode,
+                    address: address,
+                    locality: locality,
+                    totalPayment: amount // Store the payment amount as well
+                };
+                localStorage.setItem(phone, JSON.stringify(userDetails));
+
                 $(".form").hide();
                 $(".qr_code").show();
 
@@ -185,7 +206,9 @@
         </div>
         <div class="qr_code m20">
             <p>Scan the QR Code with any UPI App and pay the amount then download Invoice.</p>
-            <center><div class="timer"></div></center>
+            <center>
+                <div class="timer"></div>
+            </center>
             <center><img src="" alt="QR CODE" class="get_qr m10"></center>
             <center><img src="images/payicon.jpg" class="im m10"></center>
             <div class="flex m20">
