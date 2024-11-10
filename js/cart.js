@@ -38,7 +38,7 @@ function displayCart() {
 
    if (cart.length === 0) {
        cartContainer.innerHTML = '<p>Your cart is empty.</p>';
-       cartCount.textContent = '0'; // Reset count display to zero
+       cartCount.textContent = '0'; 
        totalMRP.textContent = '₹0';
        totalPrice.textContent = '₹0';
        totalDiscount.textContent = '- ₹0';
@@ -77,7 +77,7 @@ function displayCart() {
    totalDiscount.textContent = '- ₹' + discount;
    totalitembag.textContent = cart.length + ' items';
    totalcheckout.textContent = cart.length;
-   cartCount.textContent = count > 0 ? count : '0'; // Display count, defaulting to 0 if empty
+   cartCount.textContent = count > 0 ? count : '0';
 
    localStorage.setItem('totalpayment', Price);
 }

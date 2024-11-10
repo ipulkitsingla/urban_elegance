@@ -99,13 +99,12 @@
 
     <div class="para">
         <label>
-            Add 3% to cover the transaction fee:
+            Add 3% to Help Us Innovate and Enhance the App:
             <input type="checkbox" name="donation-para">
         </label>
     </div>
 
     <div class="payment-section">
-        <h2>Choose Your Payment Method</h2>
         <button id="pay-now" onclick="processPayment()">Pay Now</button>
         <div class="payment-options">
             <img src="images/credit_card.png" alt="Credit Card" title="Credit Card">
@@ -155,10 +154,9 @@
 
     <script>
         let selectedAmount = 0;
-
         function toggleCustomInput(isCustom) {
             const customAmountInput = document.getElementById("custom-amount");
-            
+    
             if (isCustom) {
                 customAmountInput.style.display = "block";
                 customAmountInput.required = true;
@@ -170,15 +168,27 @@
                 selectedAmount = parseInt(document.querySelector('input[name="donation-amount"]:checked').value);
             }
         }
-
+    
         document.getElementById("custom-amount").addEventListener("input", function() {
             selectedAmount = parseInt(this.value) || 0;
         });
-
-        document.getElementById("donation-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            console.log("Selected Donation Amount:", selectedAmount);
-        });
+    
+        function processPayment() {
+            let totalAmount = selectedAmount || parseInt(document.querySelector('input[name="donation-amount"]:checked').value) || 0;
+            
+            const transactionFeeCheckbox = document.querySelector('input[name="donation-para"]');
+            if (transactionFeeCheckbox.checked) {
+                totalAmount += totalAmount * 0.03;
+            }
+    
+            if (totalAmount > 100) {
+                localStorage.setItem("totalPayment", totalAmount.toFixed(2));
+                window.location.href = "Paymentdonation.html";
+            } else {
+                alert("The minimum payment amount is ₹100. Please increase the donation amount.");
+            }
+        }
     </script>
+    
 </body>
 </html>
