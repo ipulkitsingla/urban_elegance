@@ -273,12 +273,156 @@ hr {
 .row:nth-child(8) .row-img::before {
    background-image: url('/images/Tshirt/08/02.webp');
 }
-.text-with-icon {
+.footer {
+   margin-top: 8%;
+   background-color: #050404;
+   padding: 1rem;
    display: flex;
-   width: 60%;
-   margin-left: 20%;
+   flex-wrap: wrap;
    justify-content: space-between;
+   color: #f3dede;
+   width:auto;
+}
+.footer-column {
+   flex: 1;
+   min-width: 200px;
+   margin: 1rem;
+}
+.footer-column h4 {
+   font-size: 1rem;
+   margin-bottom: 1rem;
+   font-weight: 600;
+}
+.footer-column p {
+   font-weight: 300;
+   margin-bottom: 0.5rem;
+}
+.footer-column a {
+   color:#f8e6e6;
+   text-decoration: none;
+   display: block;
+   margin-bottom: 0.5rem;
+}
+.footer-column a:hover{
+   color:#ff6600;
+}
+.newsletter {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   margin-top: 1rem;
+}
+.newsletter input {
+   padding: 0.5rem;
+   border: none;
+   border-radius: 4px;
+   flex: 1;
+}
+.newsletter button {
+   padding: 0.5rem 1rem;
+   background-color: #ea580c;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+.social-icons {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   width: 100px;
+   gap:10px;
+}
+.social-icons a {
+   color: #fff5f5;
+   font-size: 20px;
+   transition: color 0.3s ease;
+}
+.social-icons a:hover {
+   color: #ff6600;
+}
+.new-customer {
+   margin-top: 20px;
+   font-size: 14px;
+   color: #150707;
+   font-weight: 400;
+}
+.new-customer a {
+   color: #ff6600;
+   text-decoration: none;
+   font-weight: 500;
+}
+.new-customer a:hover {
+   text-decoration: underline;
+   color: #ff4500;
+}
+
+.icon-item {
+   text-align: center;
+   flex: 1;
+   transition: color 0.3s ease, transform 0.3s ease;
+}
+.icon-item i {
+   font-size: 30px;
    color: black;
-   font-size: 50px;
-   margin-top: 5%;
+}
+.icon-item p {
+   margin-top: 5px;
+   font-size: 14px;
+   color: rgb(0, 0, 0);
+}
+.icon-item:hover i,
+.icon-item:hover p {
+   color: #ff6600; 
+}
+.icon-item:hover {
+   transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+   .row-1, .row-2 {
+       grid-template-columns: 1fr 1fr;
+   }
+   .heading1, .heading2, .boxes-section {
+       margin-left: 2rem;
+       margin-right: 2rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .container {
+       flex-direction: column;
+   }
+   .nav a {
+       font-size: 0.9rem;
+   }
+   .row-1, .row-2 {
+       grid-template-columns: 1fr;
+   }
+   .heading1, .heading2 {
+       margin-left: 1rem;
+       margin-right: 1rem;
+   }
+   .text-overlay h1 {
+       font-size: 2.5rem;
+   }
+   .text-overlay p {
+       font-size: 1rem;
+   }
+}
+
+@media (max-width: 480px) {
+   .text-overlay h1 {
+       font-size: 1.75rem;
+   }
+   .text-overlay p {
+       font-size: 0.875rem;
+   }
+   .footer-column {
+       min-width: 100%;
+   }
+   .boxes-section, .heading1, .heading2 {
+       margin: 1rem;
+   }
 }
